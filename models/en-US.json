@@ -1,16 +1,8 @@
-{  
+{
     "invocation":"my test app",
-    "intents":[  
+    "intents":[
         {  
-            "name":"HelloWorldIntent",
-            "phrases":[  
-                "hello",
-                "say hello",
-                "say hello world"
-            ]
-        },
-        {  
-            "name":"MyNameIsIntent",
+            "intent":"MyNameIsIntent",
             "phrases":[  
                 "{name}",
                 "my name is {name}",
@@ -23,6 +15,72 @@
                     "type":{  
                         "alexa":"AMAZON.US_FIRST_NAME",
                         "dialogflow":"@sys.given-name"
+                    }
+                }
+            ]
+        },
+        {
+            "intent":"YesIntent",
+            "phrases":[
+                "yes"
+            ]
+        },
+        {
+            "intent":"NoIntent",
+            "phrases":[
+                "no"
+            ]
+        },
+        {
+            "intent":"FirstQuestionIntent",
+            "phrases":[
+                "{partOfBody}",
+                "how about {partOfBody}",
+                "the {partOfBody}",
+                "let's go with {partOfBody}"
+            ],
+            "inputs":[
+                {
+                    "name":"partOfBody",
+                    "type":{
+                        "alexa":"PART_OF_BODY",
+                        "dialogflow":"@sys.any"
+                    }
+                }
+            ]
+        },
+        {
+            "intent":"SecondAnswerIntent",
+            "phrases":[
+                "{typeOfFluid}",
+                "how about {typeOfFluid}",
+                "the {typeOfFluid}",
+                "let's go with {typeOfFluid}"
+            ],
+            "inputs":[
+                {
+                    "name":"typeOfFluid",
+                    "type":{
+                        "alexa":"TYPE_OF_FLUID",
+                        "dialogflow":"@sys.any"
+                    }
+                }
+            ]
+        },
+        {
+            "intent":"ThirdAnswerIntent",
+            "phrases":[
+                "{aSubstance}",
+                "how about {aSubstance}",
+                "the {aSubstance}",
+                "let's go with {aSubstance}"
+            ],
+            "inputs":[
+                {
+                    "name":"aSubstance",
+                    "type":{
+                        "alexa":"A_SUBSTANCE",
+                        "dialogflow":"@sys.any"
                     }
                 }
             ]
